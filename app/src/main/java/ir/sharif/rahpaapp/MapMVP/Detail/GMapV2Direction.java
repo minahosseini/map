@@ -1,10 +1,13 @@
 package ir.sharif.rahpaapp.MapMVP.Detail;
 
 import java.util.ArrayList;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
 import com.google.android.gms.maps.model.LatLng;
+
 import android.util.Log;
 
 /**
@@ -15,7 +18,6 @@ public class GMapV2Direction {
 
     public GMapV2Direction() {
     }
-
 
     public String getDurationText(Document doc) {
         try {
@@ -45,11 +47,6 @@ public class GMapV2Direction {
     }
 
     public String getDistanceText(Document doc) {
-        /*
-         * while (en.hasMoreElements()) { type type = (type) en.nextElement();
-         *
-         * }
-         */
 
         try {
             NodeList nl1;
@@ -65,16 +62,6 @@ public class GMapV2Direction {
             return "-1";
         }
 
-        /*
-         * NodeList nl1; if(doc.getElementsByTagName("distance")!=null){ nl1=
-         * doc.getElementsByTagName("distance");
-         *
-         * Node node1 = nl1.item(nl1.getLength() - 1); NodeList nl2 = null; if
-         * (node1.getChildNodes() != null) { nl2 = node1.getChildNodes(); Node
-         * node2 = nl2.item(getNodeIndex(nl2, "value")); Log.d("DistanceText",
-         * node2.getTextContent()); return node2.getTextContent(); } else return
-         * "-1";} else return "-1";
-         */
     }
 
     public int getDistanceValue(Document doc) {
@@ -89,14 +76,6 @@ public class GMapV2Direction {
         } catch (Exception e) {
             return -1;
         }
-        /*
-         * NodeList nl1 = doc.getElementsByTagName("distance"); Node node1 =
-         * null; if (nl1.getLength() > 0) node1 = nl1.item(nl1.getLength() - 1);
-         * if (node1 != null) { NodeList nl2 = node1.getChildNodes(); Node node2
-         * = nl2.item(getNodeIndex(nl2, "value")); Log.i("DistanceValue",
-         * node2.getTextContent()); return
-         * Integer.parseInt(node2.getTextContent()); } else return 0;
-         */
     }
 
     public String getStartAddress(Document doc) {
