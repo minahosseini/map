@@ -47,8 +47,6 @@ public class LocationService extends Service implements LocationListener {
     @Override
     public void onCreate() {
         super.onCreate();
-        Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
-
         mTimer = new Timer();
         mTimer.schedule(new TimerTaskToGetLocation(), 1, notify_interval);
         intent = new Intent(str_receiver);
@@ -56,8 +54,6 @@ public class LocationService extends Service implements LocationListener {
 
     @Override
     public void onLocationChanged(Location location) {
-        Toast.makeText(this, "onLocationChanged", Toast.LENGTH_SHORT).show();
-
     }
 
     @Override
@@ -100,7 +96,6 @@ public class LocationService extends Service implements LocationListener {
                         Log.e("latitude",location.getLatitude()+"");
                         Log.e("longitude",location.getLongitude()+"");
 
-                        Toast.makeText(this, "net"+location.getLatitude(), Toast.LENGTH_SHORT).show();
                         latitude = location.getLatitude();
                         longitude = location.getLongitude();
                         fn_update(location);
@@ -115,7 +110,6 @@ public class LocationService extends Service implements LocationListener {
                     if (location!=null){
                         Log.e("latitude",location.getLatitude()+"");
                         Log.e("longitude",location.getLongitude()+"");
-                        Toast.makeText(this, "gps"+location.getLatitude(), Toast.LENGTH_SHORT).show();
 
                         latitude = location.getLatitude();
                         longitude = location.getLongitude();
